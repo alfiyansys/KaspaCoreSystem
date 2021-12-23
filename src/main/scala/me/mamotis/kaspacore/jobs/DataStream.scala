@@ -484,7 +484,7 @@ object DataStream extends Utils {
 
     val writerMongo = new ForeachWriter[Commons.EventObj] {
 
-      val writeConfig: WriteConfig = WriteConfig(Map("uri" -> "mongodb://admin:jarkoM@172.16.2.30:27017/stevia.event?replicaSet=rs0&authSource=admin"))
+      val writeConfig: WriteConfig = WriteConfig(Map("uri" -> "mongodb://MONGOUSER:MONGOPASS@172.16.2.30:27017/stevia.event?replicaSet=rs0&authSource=admin"))
       var mongoConnector: MongoConnector = _
       var events: mutable.ArrayBuffer[Commons.EventObj] = _
 
@@ -714,21 +714,21 @@ object DataStream extends Utils {
       .writeStream
       .outputMode("update")
       .queryName("Event Push Mongo 1s Window")
-      .foreach(writerMongoSig("mongodb://admin:jarkoM@172.16.2.30:27017/stevia.event1s?replicaSet=rs0&authSource=admin"))
+      .foreach(writerMongoSig("mongodb://MONGOUSER:MONGOPASS@172.16.2.30:27017/stevia.event1s?replicaSet=rs0&authSource=admin"))
       .start()
 
 //    val eventPushMongoSig2s = signature2sDs
 //      .writeStream
 //      .outputMode("update")
 //      .queryName("Event Push Mongo 2s Window")
-//      .foreach(writerMongoSig("mongodb://admin:jarkoM@172.16.2.30:27017/stevia.event2s?replicaSet=rs0&authSource=admin"))
+//      .foreach(writerMongoSig("mongodb://MONGOUSER:MONGOPASS@172.16.2.30:27017/stevia.event2s?replicaSet=rs0&authSource=admin"))
 //      .start()
 //
 //    val eventPushMongoSig3s = signature3sDs
 //      .writeStream
 //      .outputMode("update")
 //      .queryName("Event Push Mongo 3s Window")
-//      .foreach(writerMongoSig("mongodb://admin:jarkoM@172.16.2.30:27017/stevia.event3s?replicaSet=rs0&authSource=admin"))
+//      .foreach(writerMongoSig("mongodb://MONGOUSER:MONGOPASS@172.16.2.30:27017/stevia.event3s?replicaSet=rs0&authSource=admin"))
 //      .start()
 //
 //    val eventPushMongoSig5s = signature5sDs
@@ -736,7 +736,7 @@ object DataStream extends Utils {
 //      .outputMode("update")
 //      .queryName("Event Push Mongo 5s Window")
 //      .format("console")
-//      .foreach(writerMongoSig("mongodb://admin:jarkoM@172.16.2.30:27017/stevia.event5s?replicaSet=rs0&authSource=admin"))
+//      .foreach(writerMongoSig("mongodb://MONGOUSER:MONGOPASS@172.16.2.30:27017/stevia.event5s?replicaSet=rs0&authSource=admin"))
 //      .start()
 
     // eventPushHDFS.awaitTermination()
