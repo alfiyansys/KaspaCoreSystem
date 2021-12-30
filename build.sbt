@@ -18,7 +18,7 @@ assemblyShadeRules in assembly := Seq(
 )
 
 resolvers += "confluent" at "http://packages.confluent.io/maven/"
-resolvers += "Spark Packages Repo" at "https://dl.bintray.com/spark-packages/maven"
+resolvers += "Spark Packages Repo" at "https://repos.spark-packages.org"
 
 libraryDependencies += "com.fasterxml.jackson.core" % "jackson-core" % "2.9.7"
 libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.9.7"
