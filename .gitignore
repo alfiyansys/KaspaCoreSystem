@@ -102,3 +102,6 @@ project/plugins/project/
 
 ## Nohup ##
 nohup.out
+
+.metals
+metals.sbt
