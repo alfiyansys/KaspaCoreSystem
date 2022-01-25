@@ -105,3 +105,4 @@ nohup.out
 
 .metals
 metals.sbt
+.bloop
