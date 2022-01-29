@@ -484,7 +484,7 @@ object DataStream extends Utils {
 
     val writerMongo = new ForeachWriter[Commons.EventObj] {
 
-      val writeConfig: WriteConfig = WriteConfig(Map("uri" -> "mongodb://admin:jarkoM@127.0.0.1:27017/stevia.event?replicaSet=rs0&authSource=admin"))
+      val writeConfig: WriteConfig = WriteConfig(Map("uri" -> "mongodb://admin:jarkoM@localhost:27017/stevia.event?replicaSet=rs0&authSource=admin"))
       var mongoConnector: MongoConnector = _
       var events: mutable.ArrayBuffer[Commons.EventObj] = _
 
@@ -714,7 +714,7 @@ object DataStream extends Utils {
       .writeStream
       .outputMode("update")
       .queryName("Event Push Mongo 1s Window")
-      .foreach(writerMongoSig("mongodb://admin:jarkoM@127.0.0.1:27017/stevia.event1s?replicaSet=rs0&authSource=admin"))
+      .foreach(writerMongoSig("mongodb://admin:jarkoM@localhost:27017/stevia.event1s?replicaSet=rs0&authSource=admin"))
       .start()
 
 //    val eventPushMongoSig2s = signature2sDs
