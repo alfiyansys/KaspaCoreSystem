@@ -26,8 +26,8 @@ libraryDependencies += "com.fasterxml.jackson.module" % "jackson-module-scala_2.
 libraryDependencies += "com.fasterxml.jackson.core" % "jackson-annotations" % "2.9.7"
 
 // https://mvnrepository.com/artifact/org.apache.spark/spark-sql
-libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.4.8" % "provided"
-//libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.3.1"
+//libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.4.8" % "provided"
+libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.3.1"
 
 // https://mvnrepository.com/artifact/org.apache.spark/spark-core
 libraryDependencies += "org.apache.spark" %% "spark-core" % "2.4.8"

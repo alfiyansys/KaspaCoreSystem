@@ -654,68 +654,38 @@ object DataStream extends Utils {
 
     //====================================================WRITE QUERY=================================
 
-    val eventPushMongo = eventDs
-      .writeStream
-      .outputMode("append")
-      .queryName("Event Push Mongo")
-      .foreach(writerMongo)
-      .start()
+	val eventPushConsoleSig1s = eventDs.writeStream
+            .format("console")
+            .outputMode("append")
+            .start().awaitTermination()
+//    val eventPushMongo = eventDs
+//      .writeStream
+//      .outputMode("append")
+//      .queryName("Event Push Mongo")
+//      .foreach(writerMongo)
+//      .start()
 
-    val eventPushHDFS = eventDs
-      .writeStream
-      .format("json")
-      .option("path", PropertiesLoader.hadoopEventFilePath)
-      .option("checkpointLocation", PropertiesLoader.checkpointLocation)
-      .start()
+//    val eventPushHDFS = eventDs
+//      .writeStream
+//      .format("json")
+//      .option("path", PropertiesLoader.hadoopEventFilePath)
+//      .option("checkpointLocation", PropertiesLoader.checkpointLocation)
+//      .start()
 
-    val eventHitCompanySecQuery = eventHitCompanySecDs
-      .writeStream
-      .outputMode("update")
-      .queryName("EventHitCompanyPerSec")
-      .foreach(writerEventHitCompanySec)
-      .start()
+//    val eventHitCompanySecQuery = eventHitCompanySecDs
+//      .writeStream
+//      .outputMode("update")
+//      .queryName("EventHitCompanyPerSec")
+//      .foreach(writerEventHitCompanySec)
+//      .start()
 
-    val eventHitCompanyMinQuery = eventHitCompanyMinDs
-      .writeStream
-      .outputMode("update")
-      .queryName("EventHitCompanyPerMin")
-      .foreach(writerEventHitCompanyMin)
-      .start()
 
-    val eventHitCompanyHourQuery = eventHitCompanyHourDs
-      .writeStream
-      .outputMode("update")
-      .queryName("EventHitCompanyPerHour")
-      .foreach(writerEventHitCompanyHour)
-      .start()
-
-    val eventHitDeviceIdSecQuery = eventHitDeviceIdSecDs
-      .writeStream
-      .outputMode("update")
-      .queryName("EventHitDeviceIdPerSec")
-      .foreach(writerEventHitDeviceIdSec)
-      .start()
-
-    val eventHitDeviceIdMinQuery = eventHitDeviceIdMinDs
-      .writeStream
-      .outputMode("update")
-      .queryName("EventHitDeviceIdPerMin")
-      .foreach(writerEventHitDeviceIdMin)
-      .start()
-
-    val eventHitDeviceIdHourQuery = eventHitDeviceIdHourDs
-      .writeStream
-      .outputMode("update")
-      .queryName("EventHitDeviceIdPerHour")
-      .foreach(writerEventHitDeviceIdHour)
-      .start()    
-
-    val eventPushMongoSig1s = signature1sDs
-      .writeStream
-      .outputMode("update")
-      .queryName("Event Push Mongo 1s Window")
-      .foreach(writerMongoSig("mongodb://admin:jarkoM@localhost:27017/stevia.event1s?replicaSet=rs0&authSource=admin"))
-      .start()
+//    val eventPushMongoSig1s = signature1sDs
+//      .writeStream
+//      .outputMode("update")
+//      .queryName("Event Push Mongo 1s Window")
+//      .foreach(writerMongoSig("mongodb://admin:jarkoM@localhost:27017/stevia.event1s?replicaSet=rs0&authSource=admin"))
+//     .start()
 
 //    val eventPushMongoSig2s = signature2sDs
 //      .writeStream
@@ -746,6 +716,6 @@ object DataStream extends Utils {
     //    eventPushMongoSig3s.awaitTermination()
     //    eventPushMongoSig5s.awaitTermination()
 
-    sparkSession.streams.awaitAnyTermination()
+    //sparkSession.streams.awaitAnyTermination()
   }
 }
