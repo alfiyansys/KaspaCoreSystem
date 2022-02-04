@@ -27,14 +27,14 @@ libraryDependencies += "com.fasterxml.jackson.core" % "jackson-annotations" % "2
 
 // https://mvnrepository.com/artifact/org.apache.spark/spark-sql
 //libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.4.8" % "provided"
-libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.3.1"
+libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.3.4"
 
 // https://mvnrepository.com/artifact/org.apache.spark/spark-core
-libraryDependencies += "org.apache.spark" %% "spark-core" % "2.4.8"
+libraryDependencies += "org.apache.spark" %% "spark-core" % "2.3.4"
 //libraryDependencies += "org.apache.spark" %% "spark-core" % "2.3.1" % "provided"
 
 // https://mvnrepository.com/artifact/org.apache.spark/spark-sql-kafka-0-10
-libraryDependencies += "org.apache.spark" %% "spark-sql-kafka-0-10" % "2.4.8"
+libraryDependencies += "org.apache.spark" %% "spark-sql-kafka-0-10" % "2.3.4"
 
 libraryDependencies += "io.confluent" % "kafka-avro-serializer" % "5.0.0"
 
@@ -50,7 +50,7 @@ libraryDependencies += "com.amazonaws" % "aws-java-sdk-kms" % "1.11.313"
 libraryDependencies += "joda-time" % "joda-time" % "2.10"
 
 // https://mvnrepository.com/artifact/com.datastax.spark/spark-cassandra-connector
-libraryDependencies += "com.datastax.spark" %% "spark-cassandra-connector" % "2.3.1"
+libraryDependencies += "com.datastax.spark" %% "spark-cassandra-connector" % "2.3.4"
 
 libraryDependencies += "com.snowplowanalytics" %% "scala-maxmind-iplookups" % "0.5.0"
 
@@ -64,7 +64,7 @@ libraryDependencies += "org.typelevel" %% "cats-effect-laws" % "1.0.0" % "test"
 
 libraryDependencies += "com.typesafe" % "config" % "1.3.2"
 
-libraryDependencies += "org.mongodb.spark" % "mongo-spark-connector_2.11" % "2.3.1"
+libraryDependencies += "org.mongodb.spark" % "mongo-spark-connector_2.11" % "2.3.4"
 
 assemblyMergeStrategy in assembly := {
   {
